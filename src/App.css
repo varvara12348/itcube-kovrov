@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    transition: all 0.3s ease;
+    color: #1a1a1a;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для карусели */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+/* Стили для модального окна */
+.modal.show {
+    display: block;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+/* Стили для прогресс бара */
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Анимация для спиннера */
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+.spinner-border {
+    display: inline-block;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+/* Стили для модального окна с анимацией */
+.modal-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.8);
+}
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+.modal-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* Анимация для кнопок */
+.btn-animate {
+    transition: all 0.3s ease;
+}
+.btn-animate:hover {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Кнопка пропуска навигации (для доступности) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a5f7a;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Модальное окно - плавное появление */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-container {
+    background: white;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #1a5f7a;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid #eee;
+}
+
+.modal-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-btn.cancel {
+    background: #e0e0e0;
+    color: #1a1a1a;
+}
+
+.modal-btn.confirm {
+    background: #1a5f7a;
+    color: white;
+}
+
+.modal-btn.confirm:hover {
+    background: #0d3b4f;
+}
+
+/* Анимации для плавного появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Улучшение контрастности для ссылок */
+a {
+    color: #1a5f7a;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0d3b4f;
+}
+
+/* Улучшение контрастности для текста на темном фоне */
+footer, .chess-section {
+    color: #ffffff;
+}
+
+footer a, .chess-section a {
+    color: #e0f7ff;
+}
+
+footer a:hover, .chess-section a:hover {
+    color: #ffffff;
+}
+
+
+/* Весь текст на странице */
+body, .App, main, div, p, span, li, .container {
+    color: #111111 !important;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6, .title, .section-title, .card-title {
+    color: #0a4a66 !important;
+}
+
+/* Текст в карточках */
+.card, .course-card, .feature-card {
+    color: #111111 !important;
+}
+
+/* Детали курса (категория, цена, наличие) */
+.detailItem, .detail-item, .course-details li, .details li {
+    color: #111111 !important;
+}
+
+/* Метки (Категория:, Цена:, В наличии:) */
+.label, .course-label, .detail-label {
+    color: #0a4a66 !important;
+    font-weight: bold !important;
+}
+
+/* Описание курса */
+.desc, .course-desc, .description {
+    color: #222222 !important;
+}
+
+/* Названия курсов в карточках */
+.card-title, .course-title {
+    color: white !important;
+}
+
+/* Блок "Почему выбирают IT-куб" */
+.why-us-item, .whyUsItem {
+    color: #111111 !important;
+}
+
+/* Контраст для светлой темы */
+.theme-light, .light-theme {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+/* Контраст для темной темы */
+.theme-dark, .dark-theme {
+    background-color: #1a1a2e !important;
+    color: #eeeeee !important;
+}
+
+/* Кнопки */
+button, .btn, .course-btn {
+    color: white !important;
+    background-color: #0a4a66 !important;
+}
+
+button:hover, .btn:hover {
+    background-color: #063247 !important;
+}
+
+/* Ссылки */
+a, .nav-link {
+    color: #0a4a66 !important;
+    text-decoration: underline !important;
+}
+
+a:hover {
+    color: #052c3d !important;
+}
+
+/* Футер */
+footer, .footer {
+    background-color: #0a4a66 !important;
+    color: white !important;
+}
+
+footer a, .footer a {
+    color: #cceeff !important;
+}
+
+/* Шахматный клуб */
+.chess-section, .chessSection {
+    background: linear-gradient(135deg, #1a2a3a, #2a3a4a) !important;
+    color: white !important;
+}
+
+.chess-section p, .chessSection p {
+    color: #dddddd !important;
+}
+
+/* Модальное окно */
+.modal-content {
+    color: #111111 !important;
+}
+
+/* Исправление контрастности для текста в карточках */
+.card-body, .course-body, .feature-body {
+    color: #111111 !important;
+}
+
+/* Исправление для значений (Программирование, Разработка и т.д.) */
+.detailItem span:last-child, .detail-item span:last-child {
+    color: #111111 !important;
+    font-weight: 500 !important;
+}
+
+/* Исправление для цен и наличия */
+.price-value, .stock-value {
+    color: #111111 !important;
+}
+
+/* Исправление для дат */
+.date, .date-value {
+    color: #111111 !important;
+}
+
+/* Исправление для иконок и подписей */
+.icon-label, .subscription {
+    color: #111111 !important;
+}
+
+/* Исправление для всех span внутри карточек */
+.card span, .course-card span {
+    color: #111111 !important;
+}
+
+/* Исправление для темной темы */
+.theme-dark .card,
+.theme-dark .course-card,
+.theme-dark .feature-card {
+    background-color: #2a2a3e !important;
+    color: #eeeeee !important;
+}
+
+.theme-dark .detailItem span:last-child,
+.theme-dark .detail-item span:last-child {
+    color: #eeeeee !important;
+}

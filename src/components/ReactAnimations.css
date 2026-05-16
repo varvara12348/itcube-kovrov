@@ -1,0 +1,13 @@
+.anim-bounce { animation: bounce 1s ease; }
+.anim-flash { animation: flash 1s ease; }
+.anim-pulse { animation: pulse 1s ease; }
+.anim-shake { animation: shake 0.5s ease; }
+.anim-swing { animation: swing 1s ease; transform-origin: top center; }
+.anim-tada { animation: tada 1s ease; }
+
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes flash { 0%,50%,100% { opacity: 1; } 25%,75% { opacity: 0; } }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@keyframes swing { 20% { transform: rotate(10deg); } 40% { transform: rotate(-8deg); } 60% { transform: rotate(5deg); } 80% { transform: rotate(-3deg); } }
+@keyframes tada { 0% { transform: scale(1); } 10%,20% { transform: scale(0.9) rotate(-3deg); } 30%,50%,70%,90% { transform: scale(1.1) rotate(3deg); } 40%,60%,80% { transform: scale(1.1) rotate(-3deg); } }
