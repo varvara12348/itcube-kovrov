@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/itcube-kovrov&quot/static/css/main.5ae8d24f.css",
-    "main.js": "/itcube-kovrov&quot/static/js/main.88dab9f0.js",
+    "main.js": "/itcube-kovrov&quot/static/js/main.b38c4752.js",
     "static/media/roboto-latin-700-normal.woff2": "/itcube-kovrov&quot/static/media/roboto-latin-700-normal.d89b03c583b9adb99987.woff2",
     "static/media/roboto-latin-500-normal.woff2": "/itcube-kovrov&quot/static/media/roboto-latin-500-normal.1c7e8aa0ba84e4f92e5f.woff2",
     "static/media/roboto-latin-300-normal.woff": "/itcube-kovrov&quot/static/media/roboto-latin-300-normal.c8fe44913c8a1c89e4c7.woff",
@@ -76,10 +76,10 @@
     "static/media/roboto-greek-ext-300-normal.woff": "/itcube-kovrov&quot/static/media/roboto-greek-ext-300-normal.7e59ad18b38575208130.woff",
     "index.html": "/itcube-kovrov&quot/index.html",
     "main.5ae8d24f.css.map": "/itcube-kovrov&quot/static/css/main.5ae8d24f.css.map",
-    "main.88dab9f0.js.map": "/itcube-kovrov&quot/static/js/main.88dab9f0.js.map"
+    "main.b38c4752.js.map": "/itcube-kovrov&quot/static/js/main.b38c4752.js.map"
   },
   "entrypoints": [
     "static/css/main.5ae8d24f.css",
-    "static/js/main.88dab9f0.js"
+    "static/js/main.b38c4752.js"
   ]
 }
